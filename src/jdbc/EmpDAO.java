@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.math.BigDecimal;
-//import com.kh.jdbc.util.Common;
-//import com.kh.jdbc.vo.EmpVO;
 
 public class EmpDAO {
     Connection conn = null;
@@ -84,7 +82,7 @@ public class EmpDAO {
             pstmt.setBigDecimal(6, sal);
             pstmt.setBigDecimal(7, comm);
             pstmt.setInt(8, dept);
-            pstmt.executeUpdate();
+            int rst = pstmt.executeUpdate();        // 실행 결과 정수 값으로 반환 됨 (영향을 받은 행의 개수가 반환 됨)
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -2,8 +2,6 @@ package jdbc;
 
 import java.util.List;
 import java.util.Scanner;
-//import com.kh.jdbc.dao.EmpDAO;
-//import com.kh.jdbc.vo.EmpVO;
 
 public class JdbcMain {
     public static void main(String[] args) {
