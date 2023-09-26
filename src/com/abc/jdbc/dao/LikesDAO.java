@@ -11,15 +11,11 @@ import com.abc.jdbc.dto.MembersDTO;
 import com.abc.jdbc.util.DatabaseConnection;
 import com.abc.jdbc.dto.LikesDTO;
 import com.abc.jdbc.dao.MembersDAO;
-import com.abc.jdbc.util.print.Print;
-import com.abc.jdbc.util.sql.SqlQuery;
 
 public class LikesDAO {
     // 연결
     private final Connection connection;
     private final MembersDAO LoginMembersDAO;
-    Print print = new Print();
-    SqlQuery sqlQuery = new SqlQuery();
 
     public LikesDAO(MembersDAO membersDAO) {
         connection = DatabaseConnection.getConnection();
@@ -28,17 +24,17 @@ public class LikesDAO {
 
     // 좋아요 추가
     public void addLike(LikesDTO likesDTO) {
-        String sql = sqlQuery.likesDAOAddLike();
+        String sql = "INSERT INTO LIKES (POSTSID, MEMBERSID) VALUES (?, ?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, likesDTO.getPostsId());
             preparedStatement.setString(2, likesDTO.getMembersId());
             preparedStatement.executeUpdate();
-            print.likesDAOPressLike();
+            System.out.println("좋아요를 눌렀습니다.");
         } catch (SQLIntegrityConstraintViolationException sqlIntegrityConstraintViolationException) {
-            print.likesDAOAlreadyPressLike();
+            System.out.println("이미 좋아요를 누르셨습니다!");
         }
         catch (Exception e){
-            print.likesDAOAddLikeError(e);
+            System.out.println("LikesDAO addLike Error! : " + e);
         }
     }
 }

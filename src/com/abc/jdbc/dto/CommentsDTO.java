@@ -11,6 +11,19 @@ public class CommentsDTO {
     public CommentsDTO() {
     }
 
+
+    public CommentsDTO(String postsId, String membersId, String commentsText, String name) {
+        this.postsId = postsId;
+        this.membersId = membersId;
+        this.commentsText = commentsText;
+        this.name = name;
+    }
+
+    public CommentsDTO(String postsId, String membersId) {
+        this.postsId = postsId;
+        this.membersId = membersId;
+    }
+
     public String getId() {
         return id;
     }

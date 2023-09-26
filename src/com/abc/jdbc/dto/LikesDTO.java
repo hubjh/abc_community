@@ -5,7 +5,12 @@ public class LikesDTO {
     private String postsId;
     private String membersId;
 
-    public  LikesDTO() {}
+    public  LikesDTO(){}
+
+    public LikesDTO(String postsId, String membersId) {
+        this.postsId = postsId;
+        this.membersId = membersId;
+    }
 
     public String getId() {
         return id;
