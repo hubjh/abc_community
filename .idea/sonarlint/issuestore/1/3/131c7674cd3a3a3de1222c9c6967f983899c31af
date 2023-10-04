@@ -1,18 +1,0 @@
-
-{	java:S116"ZRename this field "LoginMembersDAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Í™­´ıÿÿÿÿ8±áÖ¬1
-L	java:S106 "+Replace this use of System.out by a logger.(…‚¨œşÿÿÿÿ8™¹–à¬1
-G	java:S106""+Replace this use of System.out by a logger.(¶Ô¤²8™¹–à¬1
-G	java:S106%"+Replace this use of System.out by a logger.(¯ªÁò8š¹–à¬1
-K
-java:S1128"/Remove this unused import 'java.sql.ResultSet'.(ˆóÚw8š¹–à¬1
-M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8š¹–à¬1
-M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8š¹–à¬1
-U
-java:S1128
-"8Remove this unused import 'com.abc.jdbc.dto.MembersDTO'.(®ÕùŒ8š¹–à¬1
-v
-java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(âš½ßşÿÿÿÿ8š¹–à¬1
-U
-java:S1068"3Remove this unused "LoginMembersDAO" private field.(Í™­´ıÿÿÿÿ8·áÖ¬1
