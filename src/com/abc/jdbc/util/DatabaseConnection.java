@@ -9,8 +9,8 @@ public class DatabaseConnection {
     private DatabaseConnection(){} // 기본생성자는 public으로 생성되기에, private으로 생성자 하나 생성
     // ABC@//localhost:1521/xe
     private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe"; // 데이터베이스 URL
-    private static final String USER = "ABC"; // ABC 계정의 사용자 이름
-    private static final String PASSWORD = "5555"; // ABC 계정의 비밀번호
+    private static final String USER = "JH"; // ABC 계정의 사용자 이름
+    private static final String PASSWORD = "1234"; // ABC 계정의 비밀번호
 
     public static Connection getConnection() {
         Connection connection = null;

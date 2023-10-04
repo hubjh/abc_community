@@ -187,7 +187,19 @@ public class MainApplication {
 
 
     public static void clearScreen() throws InterruptedException, IOException {
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        String os = System.getProperty("os.name").toLowerCase();
+
+        ProcessBuilder processBuilder;
+
+        if (os.contains("win")) {
+            // Windows 운영 체제인 경우
+            processBuilder = new ProcessBuilder("cmd", "/c", "cls");
+        } else {
+            // Linux 또는 macOS인 경우
+            processBuilder = new ProcessBuilder("clear");
+        }
+
+        processBuilder.inheritIO().start().waitFor();
     }
 
     public static void printFirstMenu() throws IOException, InterruptedException {
