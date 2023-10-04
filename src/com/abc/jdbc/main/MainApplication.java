@@ -1,21 +1,19 @@
 package com.abc.jdbc.main;
 
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Scanner;
-
+import com.abc.jdbc.dao.CommentsDAO;
 import com.abc.jdbc.dao.LikesDAO;
 import com.abc.jdbc.dao.MembersDAO;
 import com.abc.jdbc.dao.PostsDAO;
+import com.abc.jdbc.dto.CommentsDTO;
 import com.abc.jdbc.dto.LikesDTO;
 import com.abc.jdbc.dto.MembersDTO;
 import com.abc.jdbc.dto.PostsDTO;
-import com.abc.jdbc.dao.CommentsDAO;
-import com.abc.jdbc.dto.CommentsDTO;
 import com.abc.jdbc.util.Animation;
-import oracle.jdbc.driver.json.tree.JsonpObjectImpl;
+
+import java.io.IOException;
+import java.util.InputMismatchException;
+import java.util.List;
+import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;
 
@@ -189,21 +187,8 @@ public class MainApplication {
 
 
     public static void clearScreen() throws InterruptedException, IOException {
-        String os = System.getProperty("os.name").toLowerCase();
-
-        ProcessBuilder processBuilder;
-
-        if (os.contains("win")) {
-            // Windows 운영 체제인 경우
-            processBuilder = new ProcessBuilder("cmd", "/c", "cls");
-        } else {
-            // Linux 또는 macOS인 경우
-            processBuilder = new ProcessBuilder("clear");
-        }
-
-        processBuilder.inheritIO().start().waitFor();
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
     }
-
 
     public static void printFirstMenu() throws IOException, InterruptedException {
         Animation.logo();
