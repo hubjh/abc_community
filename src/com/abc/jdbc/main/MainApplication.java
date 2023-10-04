@@ -24,6 +24,21 @@ import static java.lang.Integer.parseInt;
 
 public class MainApplication {
     public static void main(String[] args) throws InterruptedException, IOException {
+
+//        String os = System.getProperty("os.name").toLowerCase();
+//
+//        if (os.contains("nix") || os.contains("nux") || os.contains("mac")) {
+//            // macOS 또는 Linux 환경일 때만 "TERM" 환경 변수 설정
+//            try {
+//                ProcessBuilder processBuilder = new ProcessBuilder("sh", "-c", "export TERM=xterm");
+//                Process process = processBuilder.start();
+//                process.waitFor();
+//            } catch (IOException | InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+
+
         clearScreen();
         Animation.loading();
         Scanner sc = new Scanner(System.in);
@@ -33,6 +48,8 @@ public class MainApplication {
         PostsDAO postsDAO = new PostsDAO();
         LikesDAO likesDAO = new LikesDAO(membersDAO);
         CommentsDAO commentsDAO = new CommentsDAO();
+
+
 
         while (true) {
             if (loginMember == null) { // 첫 화면

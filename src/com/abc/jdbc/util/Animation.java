@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Animation {
+
     public static void loading() throws InterruptedException, IOException {
         MainApplication.clearScreen();
         System.out.println("   _     \n" +
@@ -110,3 +111,4 @@ public class Animation {
         MainApplication.clearScreen();
     }
 }
+
